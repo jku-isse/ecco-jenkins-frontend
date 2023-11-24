@@ -68,7 +68,7 @@ pipeline {
                                             '-p 8080:8080'){
                                                 
                             try {
-                                sh 'cd /home/frontend/ && npm run parallelRun'
+                                sh 'cd /home/frontend/ && npm run runCypress'
                             } catch(e) {
                                 catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
                                     sh "exit 1"
