@@ -81,7 +81,7 @@ pipeline {
                             try {
                                 sh 'cp -r /home/frontend/cypress/screenshots/ /home/frontend/export/'
                             } catch(e) {
-                                echo "No Videos or Screenshots found. This is okay if all tests passed!"
+                                echo "No Screenshots found. This is okay if all tests passed!"
                             }
                         }
                     }
