@@ -78,7 +78,11 @@ pipeline {
                             //store results till next run although tests failed
                             sh 'cp -r /home/frontend/cypress/results/ /home/frontend/export/'
                             sh 'cp -r /home/frontend/cypress/videos/ /home/frontend/export/'
-                            sh 'cp -r /home/frontend/cypress/screenshots/ /home/frontend/export/'
+                            try {
+                                sh 'cp -r /home/frontend/cypress/screenshots/ /home/frontend/export/'
+                            } catch(e) {
+                                echo "No Videos or Screenshots found. This is okay if all tests passed!"
+                            }
                         }
                     }
                 }
