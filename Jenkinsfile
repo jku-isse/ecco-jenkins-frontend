@@ -113,7 +113,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: 'export/results/*', fingerprint: true
+            archiveArtifacts artifacts: 'export/results/*', fingerprint: false
         }
         aborted {
             sh 'docker stop $(docker ps -a -q)'
