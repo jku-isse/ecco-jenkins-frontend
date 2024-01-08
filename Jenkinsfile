@@ -30,13 +30,11 @@ pipeline {
                 dir('forDocker') {
                     checkout changelog: true,
                     poll: true,
-                    scm: [$class: 'GitSCM',
-                        branches: [[name: '*/master']],
-                        browser: [$class: 'BitbucketWeb', repoUrl: 'https://github.com/MatthiasPreuner/ecco-client.git'],
-                        doGenerateSubmoduleConfigurations: false,
-                        extensions: [],
-                        submoduleCfg: [],
-                        userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/MatthiasPreuner/ecco-client.git']]]
+                    scm: [$class: 'GitSCM', branches: [[name: '*/master']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [],
+                    submoduleCfg: [],
+                    userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/jku-isse/ecco-web-client.git']]]
                 }
             }
         }
