@@ -99,11 +99,11 @@ pipeline {
                 input "Publish this image"
                 script {
                     withDockerRegistry([credentialsId: "DockerHubCredentials", url:""]) {
-                        sh "docker tag ecco-frontend:${env.BUILD_ID} bergthalerjku/ecco_frontend:${env.BUILD_ID}"
-                        sh "docker push bergthalerjku/ecco_frontend:${env.BUILD_ID}"
+                        sh "docker tag ecco-frontend:${env.BUILD_ID} issejku/ecco_frontend:${env.BUILD_ID}"
+                        sh "docker push issejku/ecco_frontend:${env.BUILD_ID}"
                         
-                        sh "docker tag ecco-frontend:${env.BUILD_ID} bergthalerjku/ecco_frontend:latest"
-                        sh "docker push bergthalerjku/ecco_frontend:latest"
+                        sh "docker tag ecco-frontend:${env.BUILD_ID} issejku/ecco_frontend:latest"
+                        sh "docker push issejku/ecco_frontend:latest"
                     }
                 }
             }
